@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous">
+
+<title>
+    Lead Generator
+</title>
+
+<link type="text/css" href="{{ ASSETS_ROOT }}/vendor/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+
+<link type="text/css" href="{{ ASSETS_ROOT }}/vendor/notyf/notyf.min.css" rel="stylesheet">
+
+<link type="text/css" href="{{ ASSETS_ROOT }}/css/volt.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <header class="header-global">
+        <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary pt-4 navbar-dark">
+            <div class="container position-relative">
+                <div class="navbar-collapse collapse me-auto" id="navbar_global">
+                    <div class="navbar-collapse-header">
+                        <div class="row">
+                            <div class="col-6 collapse-brand">
+                                <a href="/">
+                                    <img src="{{ ASSETS_ROOT }}/img/brand/light.svg" alt="Volt logo">
+                                </a>
+                            </div>
+                            <div class="col-6 collapse-close">
+                                <a href="#navbar_global" class="fas fa-times" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" title="close" aria-label="Toggle navigation"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+
+                        {% if user %}
+                            <div class="d-flex align-items-center ms-auto text-white">
+                                {{ user.username }}
+                            </div>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="d-flex align-items-center ms-auto">
+                    <a href="{% url 'lead:user-create' %}"
+                       class="btn btn-outline-white d-inline-flex align-items-center me-md-3">
+                        Sign Up
+                    </a>
+                </div>
+                <div class="d-flex align-items-center ms-auto">
+                    <a href="{% url 'login' %}"
+                       class="btn btn-outline-white d-inline-flex align-items-center me-md-3">
+                        Login
+                    </a>
+                </div>
+                <div class="d-flex align-items-center ms-auto">
+                    <a href="{% url 'logout' %}"
+                       class="btn btn-outline-white d-inline-flex align-items-center me-md-3">
+                        Logout
+                    </a>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="section-header overflow-hidden pt-7 pt-lg-8 pb-9 pb-lg-12 bg-primary text-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                            <h1 class="fw-bolder">Lead Generator</h1>
+
+                            <h2 class="lead fw-normal text-muted mb-5">
+                                To get started, I need all the following information
+                            </h2>
+
+                        <div class="d-flex align-items-center justify-content-center mb-5">
+                          {% block content %}{% endblock content %}
+
+                        </div>
+                        <div class="d-flex justify-content-center flex-column mb-6 mb-lg-5">
+                                <span class="text-muted font-small">
+                                    &copy; Chornyi Oleh
+                                </span>
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
