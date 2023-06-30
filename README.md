@@ -28,4 +28,4 @@ python manage.py runserver
 
 ## Demo
 
-<img alt="Website interface" src="C:\Users\Oper\Desktop\lead.png"/>
+<img alt="Website interface" src="https://www.linkpicture.com/q/lead.png"/>
